@@ -1,0 +1,1 @@
+LeadFlow CRM is a mini Customer Relationship Management project designed to manage client leads effectively. It allows admins to add, track, update, and organize customer interactions through an attractive dashboard.
