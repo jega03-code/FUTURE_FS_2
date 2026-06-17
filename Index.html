@@ -1,32 +1,91 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>LeadFlow CRM</title>
-<link rel="stylesheet" href="style.css">
-</head>
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>LeadFlow CRM</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<link rel="stylesheet" href="style.css">
+
+</head>
 <body>
 
-<div class="container">
-
-<div class="login-card">
-
-<h1>LeadFlow CRM</h1>
-<p>Smart Client Lead Management</p>
-
-<input type="email" placeholder="Admin Email">
-
-<input type="password" placeholder="Password">
-
-<button onclick="login()">Login</button>
-
+<div id="loader">
+    <div class="loader-content">
+        <i class="fas fa-rocket"></i>
+        <h2>LeadFlow CRM</h2>
+    </div>
 </div>
+
+<div class="animated-bg"></div>
+
+<div class="cursor"></div>
+<div class="cursor-dot"></div>
+
+<div class="login-container">
+
+    <div class="login-left">
+        <h1>LeadFlow CRM</h1>
+
+        <p>
+            Smart Lead Management Platform
+            for Sales Teams & Businesses.
+        </p>
+
+        <div class="features">
+
+            <div>
+                <i class="fas fa-chart-line"></i>
+                Analytics Dashboard
+            </div>
+
+            <div>
+                <i class="fas fa-users"></i>
+                Lead Tracking
+            </div>
+
+            <div>
+                <i class="fas fa-bell"></i>
+                Notifications
+            </div>
+
+        </div>
+    </div>
+
+    <div class="login-card glass">
+
+        <h2>Welcome Back 👋</h2>
+
+        <p>Login to Continue</p>
+
+        <input
+        type="email"
+        placeholder="Enter Email"
+        id="email">
+
+        <input
+        type="password"
+        placeholder="Enter Password"
+        id="password">
+
+        <button onclick="login()">
+            Login
+        </button>
+
+    </div>
 
 </div>
 
 <script src="script.js"></script>
+<script src="cursor.js"></script>
+<script src="effects.js"></script>
 
 </body>
 </html>
+```
