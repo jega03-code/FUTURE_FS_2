@@ -1,0 +1,210 @@
+
+/* =========================
+   FLOATING BACKGROUND
+========================= */
+
+document.addEventListener(
+"DOMContentLoaded",
+()=>{
+
+    const bg =
+    document.querySelector(
+    ".animated-bg"
+    );
+
+    if(!bg) return;
+
+    for(let i = 0; i < 25; i++){
+
+        const bubble =
+        document.createElement("span");
+
+        const size =
+        Math.random() * 120 + 20;
+
+        bubble.style.width =
+        size + "px";
+
+        bubble.style.height =
+        size + "px";
+
+        bubble.style.left =
+        Math.random() * 100 + "%";
+
+        bubble.style.animationDuration =
+        (Math.random() * 20 + 10)
+        + "s";
+
+        bubble.style.animationDelay =
+        Math.random() * 5 + "s";
+
+        bg.appendChild(bubble);
+    }
+
+});
+
+/* =========================
+   CARD REVEAL ANIMATION
+========================= */
+
+const observer =
+new IntersectionObserver(
+
+(entries)=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.style.opacity = "1";
+
+entry.target.style.transform =
+"translateY(0)";
+}
+
+});
+
+},
+{
+threshold:0.1
+}
+);
+
+document.addEventListener(
+"DOMContentLoaded",
+()=>{
+
+const cards =
+document.querySelectorAll(
+".card,.chart-box,.activity,.table-container,.add-lead,.progress-card"
+);
+
+cards.forEach(card=>{
+
+card.style.opacity="0";
+card.style.transform=
+"translateY(40px)";
+card.style.transition=
+"0.8s ease";
+
+observer.observe(card);
+
+});
+
+});
+
+/* =========================
+   PAGE FADE IN
+========================= */
+
+window.addEventListener(
+"load",
+()=>{
+
+document.body.style.opacity="0";
+
+setTimeout(()=>{
+
+document.body.style.transition=
+"opacity 1s ease";
+
+document.body.style.opacity="1";
+
+},100);
+
+});
+
+/* =========================
+   PARALLAX EFFECT
+========================= */
+
+document.addEventListener(
+"mousemove",
+(e)=>{
+
+const cards =
+document.querySelectorAll(
+".card"
+);
+
+const x =
+(window.innerWidth / 2 - e.pageX)
+/ 40;
+
+const y =
+(window.innerHeight / 2 - e.pageY)
+/ 40;
+
+cards.forEach(card=>{
+
+card.style.transform =
+`rotateY(${x}deg)
+ rotateX(${-y}deg)`;
+
+});
+
+});
+
+/* =========================
+   BUTTON RIPPLE EFFECT
+========================= */
+
+document.addEventListener(
+"click",
+(e)=>{
+
+if(
+e.target.tagName === "BUTTON"
+){
+
+const ripple =
+document.createElement("span");
+
+ripple.classList.add(
+"ripple"
+);
+
+const rect =
+e.target.getBoundingClientRect();
+
+ripple.style.left =
+e.clientX - rect.left + "px";
+
+ripple.style.top =
+e.clientY - rect.top + "px";
+
+e.target.appendChild(ripple);
+
+setTimeout(()=>{
+
+ripple.remove();
+
+},600);
+
+}
+
+});
+
+/* =========================
+   FLOATING TITLE EFFECT
+========================= */
+
+const title =
+document.querySelector(
+".welcome-banner h1"
+);
+
+if(title){
+
+let direction = 1;
+
+setInterval(()=>{
+
+title.style.transform =
+`translateY(${direction*4}px)`;
+
+direction *= -1;
+
+},1500);
+
+}
